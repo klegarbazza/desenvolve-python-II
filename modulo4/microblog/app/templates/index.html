@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bem-vindo ao Microblog</h1>
+{% if posts %}
+    <h2>Posts Recentes</h2>
+    <ul>
+    {% for post in posts %}
+        <li>{{ post.body }} - {{ post.author.username }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum post disponível.</p>
+{% endif %}
+{% endblock %}
